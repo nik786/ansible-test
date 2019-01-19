@@ -1,0 +1,25 @@
+- name: verify nginx user
+  shell: "cat {{ nginx_config_file }} | grep -i www-data | awk '{print $2;}' | sed 's/.$//'"
+  register:  user
+- name: Print nginx user
+  debug:
+    msg: "nginx user: {{ user.stdout }}"
+    
+- name: print hello
+  shell: echo "hello world" 
+  register: helo
+- name: Print helo
+  debug:
+    msg: "helo output: {{ helo.stdout }}"
+- name: verify nginx port
+  shell: "cat {{ nginx_default_file }}  | grep -i {{ nginx_port }} | awk '{print $2;}' | sed -n '1p'"
+  register:  port
+- name: Print nginx port
+  debug:
+    msg: "nginx port : {{ port.stdout }}"   
+- name: verify nginx html directory path
+  shell: "cat {{ nginx_default_file }} | grep -i /var/www/html | awk '{print $2;}' | sed 's/.$//'"
+  register:  path
+- name: Print nginx path
+  debug:
+    msg: "nginx path : {{ path.stdout }}"   
