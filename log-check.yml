@@ -1,6 +1,0 @@
----
-- hosts: "{{ nodes }}"
-  roles:
-   - log-check
-  become: true
-  become_method: sudo 
