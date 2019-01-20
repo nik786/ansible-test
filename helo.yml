@@ -1,6 +1,6 @@
 - hosts: dev
   become: yes
-  become_user: jenkins
+  become_user: deploy
   become_method: sudo
   tasks:
       - name: print hello
