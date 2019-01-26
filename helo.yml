@@ -1,7 +1,4 @@
-- hosts: dev
-  become: yes
-  become_user: jenkins
-  become_method: sudo
+- hosts: all
   tasks:
       - name: print hello
         shell: echo "hello world" 
