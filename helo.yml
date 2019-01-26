@@ -6,4 +6,5 @@
 
       - name: Print helo
         debug:
-          msg: "helo output: {{ helo.stdout }}"
+          msg: "helo output: {{ helo.stdout }}, vault pass: {{ vault_ansible_password }}"
+          
