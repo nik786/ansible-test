@@ -1,7 +1,4 @@
-- hosts: an1
-  become: yes
-  become_user: deploy
-  become_method: sudo
+- hosts: all
   tasks:
       - name: print hello
         shell: echo "hello world" 
